@@ -105,6 +105,7 @@ section:nth-child(even) {
     letter-spacing: .1rem;
 }
 .btn-success3{
+    margin: 20px 0px;
     padding: 10px 10px;
 
     display: inline-block;
@@ -604,6 +605,7 @@ header .icons #menu-bars {
 }
 
 .menu .box-container .box .content {
+    text-align: center;
     padding: 2rem;
     padding-top: 0;
 }
