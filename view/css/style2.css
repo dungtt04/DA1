@@ -796,6 +796,7 @@ header .icons #menu-bars {
     border-radius: 10px;
 }
 .table{
+    width: 100%;
     padding-left: 50px;
     font-size: 15px;
 }
