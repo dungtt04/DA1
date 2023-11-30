@@ -204,8 +204,8 @@
                             <i class="fas fa-star-half-alt"></i>
                         </div>
 
-                                <span class="price">' . $sp_gia_moi .'VNĐ</span>
-                                <span class="price"><del>' . $sp_price .'VNĐ</del></span>
+                                <span class="price">' . $sp_gia_moi .'.000 VNĐ</span>
+                                <span class="price"><del>' . $sp_price .'.000 VNĐ</del></span>
                                 ';
                        
                                 if ($sp_quantity>0) {

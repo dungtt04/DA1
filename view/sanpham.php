@@ -29,6 +29,8 @@
                         </div>
 
                         <div class="content">
+                            
+                            <h3><a href="' . $linksp . '">' . $sp_name . '</a></h3>
                             <div class="stars">
                                 <i class="fas fa-star"></i> <!--Ngôi sao-->
                                 <i class="fas fa-star"></i>
@@ -37,8 +39,7 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <h3><a href="' . $linksp . '">' . $sp_name . '</a></h3>
-                                <span class="price">' . $sp_price . '.000</span>
+                                <span class="price">' . $sp_price . '.000 VNĐ</span>
                                 <form action="?act=addtocart" method="POST">
                                <input type="hidden" name="amount" id="amount" value="1">
                                 <input type="hidden" name="idsp" value="' . $sp_id . '">
