@@ -17,9 +17,6 @@
                 <tr class="text-center">
                     <th class="text-center" scope="col">MÃ ĐƠN HÀNG</th>
                     <th class="text-center" scope="col">KHÁCH HÀNG</th>
-                    <th class="text-center" scope="col">TÊN SẢN PHẨM</th>
-                    <th class="text-center" scope="col">SỐ LƯỢNG</th>
-                    <th class="text-center" scope="col">GIÁ TRỊ ĐƠN HÀNG</th>
                     <th class="text-center" scope="col">NGÀY ĐẶT HÀNG</th>
                     <th class="text-center" scope="col">TÌNH TRẠNG ĐƠN HÀNG</th>
                     <th class="text-center" scope="col"></th>
@@ -39,9 +36,9 @@
                         ?>
                         <tr>
                             <td class="">
-                                <?= "DAM-$bill_id"; ?>
+                                <?= "H2-$bill_id"; ?>
                             </td>
-                            <td class=" text-md-start">
+                            <td style="text-align:left">
                                 Tên:<span>
                                     <?= $bill_name; ?>
                                 </span> <br>
@@ -54,15 +51,6 @@
                                 SĐT:<span>
                                     <?= $bill_tel; ?>
                                 </span>
-                            </td>
-                            <td>
-                                <?=$bill_sp_name?>
-                            </td>
-                            <td class="">
-                                <?= $soluong; ?>
-                            </td>
-                            <td class="">
-                                <?= $bill_tongtien; ?>vnd
                             </td>
                             <td class="">
                                 <?= $bill_ngaydat; ?>

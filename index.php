@@ -11,7 +11,7 @@ include "model/cart.php";
 include "view/header.php";
 // include "view/sanpham.php";
 include "global.php";
-
+// var_dump($_SESSION['user']);
 if (!isset($_SESSION['my_cart']))
     $_SESSION['my_cart'] = [];
 
@@ -119,10 +119,10 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                     $spadd = [$idsp, $namesp, $img, $price, $soluong, $thanhtien];
                     array_push($_SESSION['my_cart'], $spadd);
                 } else {
-                    echo "Vui lòng đăng nhập trước nhập để thêm sản phẩm vào giỏ hàng - " . "<a href='?act=dangnhap'>Đăng nhập ngay!!!</a>";
+                    echo '<p style="text-align:center;font-size: 15px">Vui lòng <a href="index.php?act=dangnhap">đăng nhập</a>  trước nhập để thêm sản phẩm vào giỏ hàng </p>  ';
                 }
             }
-        
+                   
             include 'view/cart/viewcart.php';
 
             break;
@@ -203,9 +203,22 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                   echo "   <p class='text-danger mt-5 text-center'>Bạn chưa có đơn hàng nào!!!</p>";
                 }
                 break;
+            case 'huydh':
+                if (isset($_GET['id']) && !empty($_GET['id'])) {
+                    $idbill = $_GET['id'];
+                    $trangthai='4';
+                    update_dh($idbill, $trangthai);
 
-
-
+                    header("Location: index.php?act=mybill");
+                }
+            break;
+            case 'ls_bill':
+                if (isset($_GET['id']) && !empty($_GET['id'])) {
+                    $idbill=$_GET['id'];
+                $listbillct = loadall_billct($idbill);
+                }
+                include "view/cart/billct.php";
+                break;
 
         //
 

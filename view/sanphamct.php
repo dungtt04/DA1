@@ -354,6 +354,7 @@
                 <button type="submit" name="addtocart" class="btn2 btn-success ">Thêm giỏ hàng</button>
                 </form>
                 <form action="index.php?act=buynow" method="post">
+                <input type="hidden" name="amount" id="amount" value="1">
                 <input type="hidden" name="idsp" value="' . $sp_id . '">
                 <input type="hidden" name="namesp" value="' . $sp_name . '">
                 <input type="hidden" name="img" value="' . $sp_img . '">

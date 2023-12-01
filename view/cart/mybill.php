@@ -43,9 +43,7 @@
             <tr>
                 <th class="text-center">Mã đơn hàng</th>
                 <th class="text-center">Ngày đặt</th>
-                <th>Tên sản phẩm</th>
-                <th class="text-center">Số lượng mặt hàng</th>
-                <th class="text-center">Tổng giá trị đơn hàng</th>
+                <th>Thông tin khách hàng</th>
                 <th class="text-center">Tình trạng đơn hàng</th>
                 <th></th>
             </tr>
@@ -53,18 +51,22 @@
             <?php
             foreach ($listbill as $value) :
                 extract($value);
-                $huydh='index.php?act=huydh&id='.$bill_id;
+                $ctdh='index.php?act=ls_bill&id='.$bill_id;
                 $trangthai=trangthai($bill_trangthai);
                 $soluong=loadall_cart_count($bill_id);
             ?>
             <tr>
-                <td class="text-center">DAM-<?=$bill_id?></td>
+                <td class="text-center">H2-<?=$bill_id?></td>
                 <td class="text-center"><?=($bill_ngaydat);?></td>
-                <td><?=($bill_sp_name);?></td>
-                <td class="text-center"><?=$soluong?></td>
-                <td class="text-center"><?=number_format($bill_tongtien)?>vnd</td>
+                <td style="text-align: left">
+                  Tên khách hàng: <?=$bill_name?> <br>
+                  Địa chỉ: <?=$bill_diachi?> <br>
+                  SĐT: <?=$bill_tel?> <br>
+
+
+                </td>
                 <td class="text-center"><?=$trangthai?></td>
-                <td><a href="<?=$huydh?>">Hủy đơn</a></td>
+                <td><a href="<?=$ctdh?>" class="btn2 btn-success">Chi tiết</a></td>
             </tr>
             <?php endforeach;?>
         <?php

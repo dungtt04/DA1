@@ -13,7 +13,7 @@
                     <th>ĐỊA CHỈ</th>
                     <th>ĐIỆN THOẠI</th>
                     <th>VAI TRÒ</th>
-                    <!-- <th>THAO TÁC</th> -->
+                    <th>THAO TÁC</th>
                 </tr>
                 <?php
                     foreach ($list_taikhoan as $taikhoan) {

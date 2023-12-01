@@ -1,14 +1,15 @@
 <div class="row mt-4 main-web">
   <!-- <div class="col-md-12 pr-0 pl-0"> -->
     <div class="card mt-5">
-      <div class="card-header"><a href="index.php">Xem thêm sản phẩm khác</a></div>
+      <!-- <div class="card-header"><a href="index.php">Xem thêm sản phẩm khác</a></div> -->
       <table class="table_bill">
         <?php
         viewcart(1);
         ?>
       </table>
       <div class="text-right">
-        <a href="?act=bill" class="btn btn-success w-25 mb-3 mx-3">Tiến hành đặt hàng</a>
+        <a href="index.php" class="btn btn-success w-25 mb-3 mx-3">Mua thêm sản phẩm </a>
+        <a href="?act=bill" class="btn btn-success w-25 mb-3 mx-3">Thanh toán</a>
       </div>
     </div>
   <!-- </div> -->

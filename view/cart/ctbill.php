@@ -61,16 +61,16 @@
             <div class="card-header1">THÔNG TIN ĐƠN HÀNG</div>
             <div class="dh">
             <div class="dh-content">
-                <div class="dh-content1">Mã đơn hàng: </div>
-                <div class="dh-content2">DAM <?=$idbill?></div>
+                <div class="dh-content1">Mã đơn hàng </div>
+                <div class="dh-content2">: H2- <?=$idbill?></div>
             </div>
             <div class="dh-content">
-                <div class="dh-content1">Ngày đặt hàng:</div>
-                <div class="dh-content2"> <?=$ngaydathang?></div>
+                <div class="dh-content1">Ngày đặt hàng</div>
+                <div class="dh-content2">: <?=$ngaydathang?></div>
             </div>
             <div class="dh-content">
-                <div class="dh-content1">Tổng:</div>
-                <div class="dh-content2"><?= number_format($bill_tongtien).'.000 VNĐ' ?></div>
+                <div class="dh-content1">Tổng</div>
+                <div class="dh-content2">: <?= number_format($bill_tongtien).'.000 VNĐ' ?></div>
             </div>
             <!-- <div class="dh-content">
                 <div class="dh-content1">Hình thức thanh toán:</div>
@@ -97,20 +97,20 @@
                 <div class="card-header1">Thông tin đặt hàng</div>
                 <div class="dh">
             <div class="dh-content">
-                <div class="dh-content1">Khách hàng: </div>
-                <div class="dh-content2">DAM <?=$name?></div>
+                <div class="dh-content1">Khách hàng </div>
+                <div class="dh-content2">: <?=$name?></div>
             </div>
             <div class="dh-content">
-                <div class="dh-content1">Địa chỉ:</div>
-                <div class="dh-content2"> <?=$address?></div>
+                <div class="dh-content1">Địa chỉ</div>
+                <div class="dh-content2">: <?=$address?></div>
             </div>
             <div class="dh-content">
-                <div class="dh-content1">SỐ điện thoại: </div>
-                <div class="dh-content2"> <?=$tel?></div>
+                <div class="dh-content1">Số điện thoại </div>
+                <div class="dh-content2">: <?=$tel?></div>
             </div>
             <div class="dh-content">
-                <div class="dh-content1">Email:  </div>
-                <div class="dh-content2"> <?=$tel?></div>
+                <div class="dh-content1">Email  </div>
+                <div class="dh-content2">: <?=$tel?></div>
             </div>
             <!-- <div class="row frm_dm frmlist_pro">
 

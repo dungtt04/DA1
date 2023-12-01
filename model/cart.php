@@ -34,12 +34,7 @@ function viewcart($del)
                           <input type="text" style="background-color:white; font-size: 30px; color:#192a56; font-weight: bold;" name="bill_sp_name" value="' . $value[1] . '"> 
                           <p style="color: red;font-weight:bold; font-size: 20px;">' . number_format($value[3]) . ' .000 VNĐ </p>
                         </td>
-                        <td>
-                        <input class="btn_1" type="submit" value="-" width="20px"> 
-                        
-                        ' . $value[4] . '
-                        <input class="btn_1" type="submit" value="+" width="20px"> 
-
+                        <td> Số lượng: x <b>' . $value[4] . '</b>
                         </td>
                         <td>' . number_format($thanhtien) . ' .000 VNĐ</td>
                         <td>' . $btn_xoa . '</td>
@@ -226,7 +221,7 @@ function trangthai($trangthai)
       $m_tt = "Đơn hàng đã được xác nhận";
       break;
     case '2':
-      $m_tt = "Đơn hàng đang được giao";
+      $m_tt = "Đơn hà/ng đang được giao";
       break;
     case '3':
       $m_tt = "Đơn hàng giao thành công";
@@ -247,7 +242,7 @@ function update_dh($idbill, $trangthai)
 function delete_dh($idbill)
 {
   $sql = "delete from bill where bill_id=$idbill";
-  pdo_execute($sql);
+  pdo_excute($sql);
 }
 
 
@@ -290,5 +285,12 @@ function delete_dh($idbill)
 // }
 
 
-
+function loadall_billct($bill_id)
+{
+  $sql = "SELECT * FROM bill LEFT JOIN cart ON bill.bill_id = cart.bill_id WHERE bill.bill_id =".$bill_id;
+  
+  $result = pdo_query($sql);
+  
+  return $result;
+}
 ?>

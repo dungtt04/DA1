@@ -1,17 +1,27 @@
 <?php
+session_start();
 include "../model/pdo.php";
 include "../model/danhmuc.php";
+include "../model/cart.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
-include "../model/cart.php";
 include "../model/binhluan.php";
 include "../model/thongke.php";
 include "header.php";
 // controller
 
-// if (!isset($_SESSION['user'])) {
-//     header("Location:index.php?act=dangnhap");
-// }
+if (!isset($_SESSION['user'])) {
+    header("Location:account/login.php");
+    // header("Location:index.php");
+}
+if (isset($_SESSION['user'])) {
+    // var_dump($_SESSION['user']);
+    if (check_role($_SESSION['user']['tk_name']) == 0) {
+        header("location: ../index.php");
+        die;
+    }
+}
+
 $show = thongkesp_dm();
 
 if (isset($_GET['act'])) {
@@ -190,16 +200,15 @@ if (isset($_GET['act'])) {
 
 
             // DON HANG
-        case 'donhang':
-            if (isset($_POST['searchdh'])) {
-                $listbill = search_bill($_POST['iddh']);
-            } else {
-                $listbill = loadall_bill(0);
-            }
-
-            include 'donhang/list-donhang.php';
-            break;
-
+            case 'donhang':
+                if (isset($_POST['searchdh'])) {
+                    $listbill = search_bill($_POST['iddh']);
+                } else {
+                    $listbill = loadall_bill(0);
+                }
+    
+                include 'donhang/list-donhang.php';
+                break;
         case 'updatedh':
             if (isset($_GET['iddh'])) {
                 $dh = loadone_bill($_GET['iddh']);
