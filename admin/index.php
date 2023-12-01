@@ -212,7 +212,11 @@ if (isset($_GET['act'])) {
         case 'updatedh':
             if (isset($_GET['iddh'])) {
                 $dh = loadone_bill($_GET['iddh']);
-            }
+                $idbill=$_GET['iddh'];
+                $listbillct = loadall_billct($idbill);
+                }
+
+
             if (isset($_POST['updatedh'])) {
                 $id = $_POST['iddh'];
                 $tt = $_POST['ttdh'];
