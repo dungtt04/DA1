@@ -8,9 +8,9 @@
     }
     $soluong = loadall_cart_count($bill_id);
     ?>
-    <div class="mb10 edit_hh">
+    <div class="mb-3">
       <label for="name" class="form-label">Mã đơn hàng</label>
-      <input type="text" class="form-control" name="iddh" value=" <?= $bill_id; ?>" readonly>  <br>
+      <input type="text" class="form-control" name="iddh" value="<?= $bill_id; ?>" readonly> <br>
       <label for="name" class="form-label">Họ tên người nhận:  <?= $bill_name; ?></label> <br>
       <label for="name" class="form-label">Địa chỉ: <?= $bill_diachi; ?></label> <br>
       <label for="name" class="form-label"> Email:  <?= $bill_email; ?></label> <br>
@@ -20,9 +20,10 @@
       <label for="name" class="form-label"> Ngày đặt: <?= $bill_ngaydat; ?></label>
     </div>
     <div class="mb10 ">
+ 
       <label for="name" class="form-label">Tình trạng đơn hàng</label>
-      <select  style="width: 100%;"  class="form-select" name="ttdh" aria-label="Default select example">
-        <option value="0" <?php echo ($bill_trangthai == 0) ? "selected" : ""; ?>>
+      <select class="form-select" name="ttdh" aria-label="Default select example">
+          <option value="0" <?php echo ($bill_trangthai==0) ? "selected" : ""; ?>>
           Đơn hàng chờ xác nhận
         </option>
         <option value="1" <?php echo ($bill_trangthai == 1) ? "selected" : ""; ?>>
