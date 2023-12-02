@@ -219,15 +219,21 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                   echo "   <p class='text-danger mt-5 text-center'>Bạn chưa có đơn hàng nào!!!</p>";
                 }
                 break;
-            case 'huydh':
-                if (isset($_GET['id']) && !empty($_GET['id'])) {
-                    $idbill = $_GET['id'];
-                    $trangthai='4';
-                    update_dh($idbill, $trangthai);
-
-                    header("Location: index.php?act=mybill");
-                }
-            break;
+                case 'huydh':
+                    if (isset($_GET['id']) && !empty($_GET['id'])) {
+                        $idbill = $_GET['id'];
+                        $dh = loadone_bill($idbill);
+                        extract($dh);
+                        var_dump($dh);
+                        if ($bill_trangthai == 0) {
+                            update_dh($idbill, 4);
+                        } else {
+                            // Không cho phép hủy đơn hàng
+                            echo "Không thể hủy đơn hàng với trạng thái hiện tại là: " ;
+                        }
+                        header("Location: index.php?act=mybill");
+                    }
+                    break;
             case 'ls_bill':
                 if (isset($_GET['id']) && !empty($_GET['id'])) {
                     $idbill=$_GET['id'];
