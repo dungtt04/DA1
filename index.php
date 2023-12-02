@@ -106,26 +106,42 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
 
 
 
-        case 'addtocart':
-            if (isset($_POST['addtocart'])) {
-                if (isset($_SESSION['user'])) {
-                    $idsp = $_POST['idsp'];
-                    $namesp = $_POST['namesp'];
-                    $img = $_POST['img'];
-                    $price = $_POST['price'];
-                    $soluong = $_POST['amount'];
-                    // var_dump($_POST['price']); die;
-                    $thanhtien = $price * $soluong;
-                    $spadd = [$idsp, $namesp, $img, $price, $soluong, $thanhtien];
-                    array_push($_SESSION['my_cart'], $spadd);
-                } else {
-                    echo '<p style="text-align:center;font-size: 15px">Vui lòng <a href="index.php?act=dangnhap">đăng nhập</a>  trước nhập để thêm sản phẩm vào giỏ hàng </p>  ';
+            case 'addtocart':
+                if (isset($_POST['addtocart'])) {
+                    if (isset($_SESSION['user'])) {
+                        $idsp = $_POST['idsp'];
+                        $namesp = $_POST['namesp'];
+                        $img = $_POST['img'];
+                        $price = $_POST['price'];
+                        $soluong = $_POST['amount'];
+            
+                        // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+                        $product_exists = false;
+                        foreach ($_SESSION['my_cart'] as &$item) {
+                            if ($item[0] == $idsp) {
+                                $item[4] += $soluong; // Tăng số lượng
+                                $item[5] = $item[4] * $item[3]; // Cập nhật thành tiền
+                                $product_exists = true;
+                                break;
+                            }
+                        }
+            
+                        // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
+                        if (!$product_exists) {
+                            $thanhtien = $price * $soluong;
+                            $spadd = [$idsp, $namesp, $img, $price, $soluong, $thanhtien];
+                            array_push($_SESSION['my_cart'], $spadd);
+                        }
+            
+                        // echo "<pre>";
+                        // var_dump($_SESSION['my_cart']);
+                        // die;
+                    } else {
+                        echo '<p style="text-align:center;font-size: 15px">Vui lòng <a href="index.php?act=dangnhap">đăng nhập</a>  trước nhập để thêm sản phẩm vào giỏ hàng </p>  ';
+                    }
                 }
-            }
-                   
             include 'view/cart/viewcart.php';
-
-            break;
+                break;
         case 'buynow':
             if (isset($_POST['buynow'])) {
                 if (isset($_SESSION['user'])) {

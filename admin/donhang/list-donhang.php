@@ -60,10 +60,6 @@
                             </td>
                             <td>
                                 <a href="index.php?act=updatedh&iddh=<?= $bill_id; ?>"><i class="fa-regular fa-pen-to-square fa-fade fa-xl" style="color: #20365a;"></i></a>
-                                <a onclick="return confirm('Bạn có muốn xoá không?')"
-                                    href="index.php?act=deletedh&iddh=<?= $bill_id; ?>" class="btn btn-danger">
-                                    <i class="fa-solid fa-trash fa-fade fa-xl" style="color: #020c1d;"></i>
-                                </a>
                             </td>
                         </tr>
                     <?php endforeach;
