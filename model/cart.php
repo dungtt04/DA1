@@ -197,15 +197,15 @@ function bill_chitiet($listbill)
                           <span class="font-weight-bold">' . $value['cart_name'] . '</span
                           >
                         </td>
-                        <td>' . number_format($value['cart_price']) . ' VNĐ</td>
+                        <td>' . number_format($value['cart_price']) . '.000 VNĐ</td>
                         <td>' . $value['cart_soluong'] . '</td>
-                        <td>' . number_format($value['cart_thanhtien']) . ' VNĐ</td>
+                        <td>' . number_format($value['cart_thanhtien']) . '.000 VNĐ</td>
                       </tr>';
     $stt += 1;
   }
   echo '<tr>
               <td class="px-4" colspan="4">Tổng tiền sản phẩm: </td>
-              <td class="text-center">' . number_format($tong) . ' VNĐ</td> 
+              <td class="text-center">' . number_format($tong) . '.000 VNĐ</td> 
               <td></td> 
           </tr>
           </tbody>';

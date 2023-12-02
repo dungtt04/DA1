@@ -43,10 +43,10 @@
                             <?= $cart_soluong ?>
                         </td>
                         <td style="padding:10px" class="text-center">
-                            <?= $cart_price ?>
+                            <?= $cart_price ?>.000
                         </td>
                         <td style="padding:10px" class="text-center">
-                            <?= number_format($bill_tongtien) ?>vnd
+                            <?= number_format($bill_tongtien) ?>.000vnd
 </td>
 <td style="padding:10px" class="text-center">
                             <?= $bill_ngaydat; ?>

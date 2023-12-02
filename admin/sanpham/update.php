@@ -45,7 +45,7 @@ if (is_file($hinhpath)) {
                 <?php echo $hinh ?>
             </div>
             <div class=" mb10">
-                Giá Mới <br>
+                Giá Khuyến Mại <br>
                 <input type="text" name="tacgia" value="<?php echo $sp_gia_moi ?>">
             </div>
             <div class=" mb10">

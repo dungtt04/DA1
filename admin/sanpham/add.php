@@ -29,7 +29,7 @@
                         <input type="file" name="hinh" >
                     </div>
                     <div class="row mb10">
-                         Giá Mới <br>
+                         Giá Khuyến Mại <br>
                         <input type="tex" name="tacgia" >
                     </div>
                     <div class="row mb10">

@@ -28,7 +28,7 @@
                     <th>HÌNH</th>
                     <th>TÊN SẢN PHẨM</th>
                     <th>GIÁ</th>
-                    <th>GIÁ MỚI</th>
+                    <th>GIÁ KHUYẾN MẠI</th>
                     <th>SỐ</th>
                     <th>LƯỢT XEM</th>
                     <th>THAO TÁC</th>
@@ -56,8 +56,8 @@
                        echo
                             '<td>' . $hinh . '</td>
                             <td>' . $sp_name . '</td>
-                            <td>' . $sp_price . '</td>
-                            <td>' . $sp_gia_moi . '</td>
+                            <td>' . $sp_price . '.000</td>
+                            <td>' . $sp_gia_moi . '.000</td>
                             <td>' . $sp_quantity . '</td>
                             <td>' . $sp_luotxem . '</td>
                             ';        
