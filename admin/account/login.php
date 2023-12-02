@@ -38,11 +38,7 @@ include "../../model/taikhoan.php";
 
     <div class="header">
         <p>TRANG QUẢN TRỊ H2 FASHION </p>
-        <!-- <marquee behavior="scroll" direction="left" scrollamount="5">
-            Xin chào admin chúc bạn 1 ngày tốt lành <i class="fa-regular fa-face-smile fa-xl"
-                style="color: #ffffff;"></i>
-        </marquee> -->
-        <!-- <a href="#">Xin chào admin</a> -->
+      
     </div>
 
     <div class="nav">
@@ -50,21 +46,7 @@ include "../../model/taikhoan.php";
         <img src="../../view/image/h2_fashion_logo.png" alt="" width="210px" style="margin: 25px 0px;">
 
 
-        <!-- <a href="../index.php"> Trang Chủ</a>
-        <a href="index.php?act=listdm"> Quản lý danh mục</a>
-        <a href="index.php?act=listsp"> Quản lý sản phẩm</a>
-        <a href="index.php?act=dskh">Khách hàng</a>          
-        <a class="nav-link" href="?act=donhang">Đơn hàng</a>
-        <a class="nav-link" href="?act=bl">Bình luận</a> -->
-
-
-        <!-- <div class="adm">
-            <a href="index.php?act=dangxuat">Đăng Xuất <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i></a>
-            <div class="">
-
-            <i class="fa-solid fa-user fa-lg"></i>
-            </div>
-        </div> -->
+        
     </div>
     <div class="main">
 <div class="page">
@@ -93,10 +75,7 @@ include "../../model/taikhoan.php";
             </form>
             <?php
 
-        // }
-        // if (isset($thongbao)) {
-        //     echo $thongbao;
-        // }
+        
         ?>
     </div>
 </div>
