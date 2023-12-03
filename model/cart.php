@@ -284,7 +284,10 @@ function delete_dh($idbill)
 //     pdo_execute($sql);
 // }
 
-
+function upadte_soluong($sp_id,$sp_soluong){
+  $sql="UPDATE `san_pham` SET `sp_quantity` =`sp_quantity`- '$sp_soluong' WHERE `san_pham`.`sp_id` = $sp_id";
+  pdo_execute($sql);
+}
 function loadall_billct($bill_id)
 {
   $sql = "SELECT * FROM bill LEFT JOIN cart ON bill.bill_id = cart.bill_id WHERE bill.bill_id =".$bill_id;

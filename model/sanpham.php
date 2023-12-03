@@ -1,6 +1,6 @@
 <?php
-    function insert_sanpham($tenloai,$giasp,$hinh,$sp_gia_moi,$mota,$iddm){
-        $sql = "INSERT INTO san_pham(sp_name,sp_price,sp_img,sp_gia_moi,sp_mota,dm_id) VALUES('$tenloai','$giasp','$hinh', '$sp_gia_moi','$mota','$iddm')";
+    function insert_sanpham($tenloai,$giasp,$hinh,$sp_gia_moi,$soluong,$mota,$iddm){
+        $sql = "INSERT INTO san_pham(sp_name,sp_price,sp_img,sp_gia_moi,sp_quantity,sp_mota,dm_id) VALUES('$tenloai','$giasp','$hinh', '$sp_gia_moi','$soluong','$mota','$iddm')";
         pdo_execute($sql);
     }
 
@@ -48,11 +48,11 @@
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }
-    function update_sanpham($id, $tensp, $giasp, $hinh, $tacgia, $mota, $iddm){
+    function update_sanpham($id, $tensp, $giasp, $hinh, $tacgia,$soluong, $mota, $iddm){
         if ($hinh !='') {
-            $sql = "UPDATE `san_pham` SET  `sp_name`= '$tensp', `sp_price`= '$giasp', `sp_img`= '$hinh', `sp_gia_moi`= '$tacgia', `sp_mota`= '$mota',`dm_id` = '$iddm' WHERE `sp_id`=".$id;           
+            $sql = "UPDATE `san_pham` SET  `sp_name`= '$tensp', `sp_price`= '$giasp', `sp_img`= '$hinh', `sp_gia_moi`= '$tacgia',`sp_quantity`='$soluong', `sp_mota`= '$mota',`dm_id` = '$iddm' WHERE `sp_id`=".$id;           
         }else {
-            $sql = "UPDATE `san_pham` SET  `sp_name`= '$tensp', `sp_price`= '$giasp',`sp_gia_moi`= '$tacgia', `sp_mota`= '$mota', `dm_id`= '$iddm' WHERE `sp_id`=" .$id;           
+            $sql = "UPDATE `san_pham` SET  `sp_name`= '$tensp', `sp_price`= '$giasp',`sp_gia_moi`= '$tacgia', `sp_quantity`='$soluong',`sp_mota`= '$mota', `dm_id`= '$iddm' WHERE `sp_id`=" .$id;           
         }
         // echo $sql;die;
          pdo_execute($sql);

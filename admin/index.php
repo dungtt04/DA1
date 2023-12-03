@@ -88,6 +88,7 @@ if (isset($_GET['act'])) {
                     $giasp = $_POST['giasp'];
                     $mota = $_POST['mota'];
                     $tacgia = $_POST['tacgia'];
+                    $soluong =$_POST['soluong'];
                     $hinh = $_FILES['hinh']['name'];
                     $dir = "../upload/";
                     $target_file = $dir . basename($_FILES['hinh']['name']);
@@ -96,7 +97,7 @@ if (isset($_GET['act'])) {
                     } else {
 
                     }
-                    insert_sanpham($tensp, $giasp, $hinh, $tacgia, $mota, $iddm);
+                    insert_sanpham($tensp, $giasp, $hinh, $tacgia, $soluong,$mota, $iddm);
                     $thongbao = "Thêm thành công";
                 } else {
                     $thongbaor = 'Vui lòng nhập tên và giá sản phẩm';
@@ -146,6 +147,7 @@ if (isset($_GET['act'])) {
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
                 $tacgia = $_POST['tacgia'];
+                $soluong =$_POST['soluong'];
                 $hinh = $_FILES['hinh']['name'];
                 $dir = "../upload/";
                 $target_file = $dir . basename($_FILES['hinh']['name']);
@@ -153,7 +155,7 @@ if (isset($_GET['act'])) {
                     ;
                 $listdanhmuc = loadall_danhmuc();
                 // var_dump($_POST);
-                update_sanpham($id, $tensp, $giasp, $hinh, $tacgia, $mota, $iddm);
+                update_sanpham($id, $tensp, $giasp, $hinh, $tacgia, $soluong,$mota, $iddm);
                 $thongbao = "cập nhật thành công";
 
             } else {

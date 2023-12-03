@@ -49,6 +49,10 @@ if (is_file($hinhpath)) {
                 <input type="text" name="tacgia" value="<?php echo $sp_gia_moi ?>">
             </div>
             <div class=" mb10">
+                Số lượng <br>
+                <input type="text" name="soluong" value="<?php echo $sp_quantity?>">
+            </div>
+            <div class=" mb10">
                 Mô tả Sản Phẩm <br>
                 <textarea name="mota" cols="30" rows="10" value="<?php echo $sp_mota ?>"><?php echo $sp_mota ?></textarea>
             </div>
