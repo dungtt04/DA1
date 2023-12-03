@@ -19,7 +19,9 @@
                     <th class="text-center" scope="col">KHÁCH HÀNG</th>
                     <th class="text-center" scope="col">NGÀY ĐẶT HÀNG</th>
                     <th class="text-center" scope="col">TÌNH TRẠNG ĐƠN HÀNG</th>
+                    <th class="text-center" scope="col">TRẠNG THÁI</th>
                     <th class="text-center" scope="col"></th>
+
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +59,17 @@
                             </td>
                             <td class="">
                                 <?= $tt; ?>
+                            </td>
+                            <td class="">
+                                <?php
+                                if ($tt == 'Đơn hàng giao thành công') {
+                                    echo 'Đã được thanh toán';
+
+                                } else if ($tt == 'Hủy đơn hàng') {
+                                    echo 'Đã hủy';
+                                } else {
+                                    echo 'Đơn hàng chưa được thanh toán';
+                                } ?>
                             </td>
                             <td>
                                 <a href="index.php?act=updatedh&iddh=<?= $bill_id; ?>"><i class="fa-regular fa-pen-to-square fa-fade fa-xl" style="color: #20365a;"></i></a>
