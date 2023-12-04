@@ -48,6 +48,13 @@ function delete_taikhoan($id){
 
 
 }
+function check_email($email)
+{
+    // $iddm = $_GET['id'];
+    $sql = "SELECT * FROM tai_khoan WHERE tk_email='$email'";
+    $check = pdo_query_one($sql);
+    return $check;
+}
 // function login_admin($user, $pass)
 // {
 //     $sql = "select * from taikhoan where tk_name='$user' and tk_pass='$pass' and rtk_ole = 1";

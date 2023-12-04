@@ -41,6 +41,8 @@
                             </div>
                                 <span class="price">' . $sp_price . '.000 VNĐ</span>
                                 <form action="?act=addtocart" method="POST">
+                                <input type="hidden" name="quantity" value="' . $sp_quantity . '">
+
                                <input type="hidden" name="amount" id="amount" value="1">
                                 <input type="hidden" name="idsp" value="' . $sp_id . '">
                                 <input type="hidden" name="namesp" value="' . $sp_name . '">

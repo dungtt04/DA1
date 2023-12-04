@@ -1,4 +1,6 @@
 <div>
+<a href="index.php?act=donhang"><i class="fa-solid fa-arrow-right fa-rotate-180 fa-2xl"></i></a>
+
   <h3 style="text-align:center;">CẬP NHẬT ĐƠN HÀNG</h3>
   <form action="?act=updatedh" method="post">
     <?php

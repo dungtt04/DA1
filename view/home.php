@@ -98,6 +98,8 @@
                                 <input type="hidden" name="namesp" value="<?=$sp_name?>">
                                 <input type="hidden" name="img" value="<?=$sp_img?>">
                                 <input type="hidden" name="price" value="<?=$sp_price?>">
+                                <input type="hidden" name="quantity" value="<?=$sp_quantity?>">
+
                                 <?php
                                                                 if ($sp_quantity>0) {
                                                                     echo '<div class="dathang">
@@ -210,6 +212,7 @@
                        
                                 if ($sp_quantity>0) {
                                     echo '<div class="dathang">
+                                    
                                     <button type="submit" name="addtocart" class="btn2 btn-success ">Thêm giỏ hàng</button>
                                     </form>
                     

@@ -289,7 +289,9 @@
     $sp_img = $img_path . $sp_img;
     ?>
     <div>
-        <?php echo ' <form action="?act=addtocart" method="POST" class="product-content ">
+        <?php
+        $sl='';
+         echo ' <form action="?act=addtocart" method="POST" class="product-content ">
         <div class="product-content-left ">
             <div class="product-content-left-big-img">
                 <img src="' . $sp_img . '" alt="">; 
@@ -326,16 +328,20 @@
                 echo '<p style="font-weight: bold;">SỐ LƯỢNG : </p>
                 <input type="text" name="" onclick="handleMinus()" value="-" readonly>
                 <input type="text" name="amount" id="amount" value="1">
-                <input type="text" name="" onclick="handlePlus()"  value="+" readonly>';
+                <input type="text" name="" onclick="handlePlus()"  value="+" readonly>
+                ';
+               
             }
             echo '
-
+                <input type="hidden" name="quantity" value="' . $sp_quantity . '">
                 <input type="hidden" name="idsp" value="' . $sp_id . '">
                 <input type="hidden" name="namesp" value="' . $sp_name . '">
                 <input type="hidden" name="img" value="' . $sp_img . '">
                 <input type="hidden" name="price" value="' . $sp_price . '">
             </div>
             '; 
+            echo $sl;
+
             if ($sp_quantity>0) {
                 echo '            <div class="tinhtrang">
                 <p class="tinhtrang1">Tình Trạng: </p>

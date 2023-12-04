@@ -1,5 +1,41 @@
+<style>
+  .tdt{
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    height: 160px;
+    padding: 10px 20px;
+}
+  .tdt a{
+    text-decoration:none;
+    float: right;
+    color: black;
+  }
+  .tdt a:hover{
+    font-weight: bold;
+
+}
+</style>
+
 <div class="col-md-8">
+
   <h1>THỐNG KÊ SẢN PHẨM</h1>
+  <?php
+// Gọi function để lấy tổng doanh thu
+$totalRevenue = getTotalRevenue();
+?>
+
+<div class="col-md-3 offset-md-1">
+    <div class="card mt-5 tdt"  style="width: 18rem">
+        <div class="card-body">
+            <h3 class="card-title">Tổng Doanh Thu</h3>
+            <p class="card-text"><?= number_format($totalRevenue) ?>.000 VND</p>
+            <a href="index.php?act=doanhthu">Xem chi tiết</a>
+
+        </div>
+    </div>
+</div>
+
   <div class="row frm_dm frmlist_pro">
     <table class="table">
       <thead>

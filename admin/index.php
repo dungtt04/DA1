@@ -27,6 +27,9 @@ $show = thongkesp_dm();
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
+        case 'doanhthu':
+            include 'doanhthu_sp.php';
+            break;
         case 'adddm':
             // kiểm tra ng dùng có ấn vào add ko
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {

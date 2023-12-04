@@ -6,8 +6,6 @@ include "model/danhmuc.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/cart.php";
-
-
 include "view/header.php";
 // include "view/sanpham.php";
 include "global.php";
@@ -108,14 +106,22 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
 
             case 'addtocart':
                 if (isset($_POST['addtocart'])) {
+
                     if (isset($_SESSION['user'])) {
                         $idsp = $_POST['idsp'];
                         $namesp = $_POST['namesp'];
                         $img = $_POST['img'];
                         $price = $_POST['price'];
                         $soluong = $_POST['amount'];
-            
-                        // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+                        $quantity= $_POST['quantity'];
+                        $sl='<p style="color:red; font-size: 15px;">Bạn không thể mua trên '.$quantity.' sản phẩm';
+
+                        if ($soluong>$quantity) {
+
+                            echo $sl;
+                        }
+                        else {                        
+                            // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
                         $product_exists = false;
                         foreach ($_SESSION['my_cart'] as &$item) {
                             if ($item[0] == $idsp) {
@@ -136,11 +142,18 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                         // echo "<pre>";
                         // var_dump($_SESSION['my_cart']);
                         // die;
+                        include 'view/cart/viewcart.php';
+
+                        }
+            
                     } else {
                         echo '<p style="text-align:center;font-size: 15px">Vui lòng <a href="index.php?act=dangnhap">đăng nhập</a>  trước nhập để thêm sản phẩm vào giỏ hàng </p>  ';
+                        include 'view/cart/viewcart.php';
+
                     }
                 }
-            include 'view/cart/viewcart.php';
+                include 'view/cart/viewcart.php';
+
                 break;
         case 'buynow':
             if (isset($_POST['buynow'])) {
@@ -251,6 +264,18 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                 }
                 include "view/cart/billct.php";
                 break;
+                case 'quenmk':
+                    if (isset($_POST['gui_email']) && ($_POST['gui_email'])) {
+                        $email = $_POST['email'];
+                        $check_email = check_email($email);
+                        if (is_array($check_email)) {
+                            $thongbao = "Mật khẩu của bạn là" . $check_email['tk_pass'];
+                        } else {
+                            $thongbao = "Email này không tồn tại";
+                        }
+                    }
+                    include "view/account/quenmk.php";
+                    break;
 
         //
 
