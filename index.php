@@ -142,7 +142,7 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                         // echo "<pre>";
                         // var_dump($_SESSION['my_cart']);
                         // die;
-                        include 'view/cart/viewcart.php';
+                        // include 'view/cart/viewcart.php';
 
                         }
             
