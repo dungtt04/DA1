@@ -85,7 +85,7 @@ $resultByCategory = getRevenueByCategory();
 <div id="chart_div" style="width: 800px; height: 100%;"></div>
 
 <!-- JavaScript -->
-<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
   google.charts.load('current', {packages: ['corechart', 'bar']});
   google.charts.setOnLoadCallback(drawChart);
@@ -116,7 +116,7 @@ $resultByCategory = getRevenueByCategory();
     var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
     chart.draw(data, options);
   }
-</script> -->
+</script>
 
 
     <!-- Biểu đồ doanh thu theo ngày

@@ -54,17 +54,21 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
 
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-                $email = $_POST['email'];
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $tel = $_POST['tel'];
-                $address = $_POST['address'];
-                if ($check_user = check_user($user, $pass)) {
-                    $thongbao = "Tài khoản đã tồn tại";
-                } else {
-                    insert_taikhoan($user, $pass, $email, $tel, $address);
-                    $thongbao = "Đã đăng ký thành công vui lòng đăng nhập để thực hiện các chức năng";
-                    header("Location:index.php?act=index.php");
+                if (($_POST['user']!='')&&($_POST['pass']!='')&&($_POST['email']!='')) {
+                    $email = $_POST['email'];
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $tel = $_POST['tel'];
+                    $address = $_POST['address'];
+                    if ($check_user = check_user($user, $pass)) {
+                        $thongbao = "Tài khoản đã tồn tại";
+                    } else {
+                        insert_taikhoan($user, $pass, $email, $tel, $address);
+                        $thongbao = "Đã đăng ký thành công vui lòng đăng nhập để thực hiện các chức năng";
+                        header("Location:index.php?act=index.php");
+                    }
+                }else {
+                    echo '<h2 style="color:red;">Điền thông tin </h2>';
                 }
             }
             include "view/account/register.php";
@@ -72,17 +76,23 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
 
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $check_user = check_user($user, $pass);
-                if (is_array($check_user) && ($check_user['tk_role'] == 0)) {
-                    $_SESSION['user'] = $check_user;
-                    header('Location:index.php');
-                } else if (is_array($check_user) && ($check_user['tk_role'] != 0)) {
-                    header('Location:admin/index.php');
-                } else {
-                    $thongbao = "Tài khoản không tồn tại vui lòng kiểm tra lại user or pass";
-                    # code...
+                if (($_POST['user']!='')&&($_POST['pass']!='')){
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $check_user = check_user($user, $pass);
+                    if (is_array($check_user) && ($check_user['tk_role'] == 0)) {
+                        $_SESSION['user'] = $check_user;
+                        header('Location:index.php');
+                    } else if (is_array($check_user) && ($check_user['tk_role'] != 0)) {
+                        header('Location:admin/index.php');
+                    } else {
+                        echo '<h2 style="color:red;">Tài khoản không tồn tại vui lòng kiểm tra lại user or pass</h2>';
+                        $thongbao = "Tài khoản không tồn tại vui lòng kiểm tra lại user or pass";
+                        # code...
+                    }
+                }
+                else {
+                    echo '<h2 style="color:red;">Điền thông tin </h2>';
                 }
             }
             include "view/account/login.php";
@@ -203,26 +213,33 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                 }else{
                     $id = 0;
                 }
-                $name = $_POST['userbuy'];
-                $bill_sp_name=$_POST['bill_sp_name'];
-                $email = $_POST['email'];
-                $address = $_POST['diachi'];
-                $tel = $_POST['std'];
-                $pttt = $_POST['pttt'];
-                $ngaydathang = date('h:i:sa d/m/Y');
-                $tongdonhang = tongtien();
-                // tao bill
-                $idbill = insert_bill($name, $bill_sp_name, $address, $tel, $email, $pttt, $tongdonhang, $ngaydathang, $tk_id);
+                if (($_POST['userbuy']!='')&&($_POST['diachi']!='')&&($_POST['std']!='')) {
+             
+                    $name = $_POST['userbuy'];
+                    $bill_sp_name=$_POST['bill_sp_name'];
+                    $email = $_POST['email'];
+                    $address = $_POST['diachi'];
+                    $tel = $_POST['std'];
+                    $pttt = $_POST['pttt'];
+                    $ngaydathang = date('h:i:sa d/m/Y');
+                    $tongdonhang = tongtien();
+                    // tao bill
+                    $idbill = insert_bill($name, $bill_sp_name, $address, $tel, $email, $pttt, $tongdonhang, $ngaydathang, $tk_id);
 
-                foreach ($_SESSION['my_cart'] as $cart) {
-                    insert_cart($cart[0],$_SESSION['user']['tk_id'], $idbill, $cart[1], $cart[3], $cart[4], $cart[5], $cart[2]);
-                    upadte_soluong($cart[0], $cart[4]);
-                }
-                $_SESSION['my_cart'] = [];
+                    foreach ($_SESSION['my_cart'] as $cart) {
+                        insert_cart($cart[0],$_SESSION['user']['tk_id'], $idbill, $cart[1], $cart[3], $cart[4], $cart[5], $cart[2]);
+                        upadte_soluong($cart[0], $cart[4]);
+                    }
+                    $_SESSION['my_cart'] = [];
+
+                    $bill = loadone_bill($idbill);
+                    $billct = loadall_cart($idbill);
+                    include 'view/cart/ctbill.php';
+                 }else{
+                     echo '<h1>Điền thông tin</h1>';
+                    include 'view/cart/bill.php';
+                 }
             }
-            $bill = loadone_bill($idbill);
-            $billct = loadall_cart($idbill);
-            include 'view/cart/ctbill.php';
             break;
 
             case 'mybill':

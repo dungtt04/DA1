@@ -31,11 +31,11 @@
                                     <td>'.$noidung.'</td>
                                     <td>'.$tk_name.'</td>
                                     <td>'.$sp_name.'</td>
-                                    <td>'.$ngaybinhluan.'</td>
-                                    <td> <a href="' . $xoabl . '"><i class="fa-solid fa-trash fa-fade fa-xl" style="color: #020c1d;"></i></a> </td>
-                                    </tr>';
-                                }
-                            ?>
+                                    <td>'.$ngaybinhluan.'</td>';
+                                    ?>
+                                <td> <a onclick="return confirm('Bạn có muốn xóa không?')" href="<?php echo $xoabl?>"><i class="fa-solid fa-trash fa-fade fa-xl" style="color: #020c1d;"></i></a> </td>
+                            </tr>
+                        <?php }?>
                         </table>
                     </div>
 

@@ -85,7 +85,7 @@ if (isset($_GET['act'])) {
         case 'addsp':
             // kiểm tra ng dùng có ấn vào add ko
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                if (($_POST['tensp'] != "") && ($_POST['giasp'] != "")) {
+                if (($_POST['tensp'] != "") && ($_POST['giasp'] != "") && ($_POST['giasp'] >0)) {
                     $iddm = $_POST['iddm'];
                     $tensp = $_POST['tensp'];
                     $giasp = $_POST['giasp'];
@@ -103,7 +103,7 @@ if (isset($_GET['act'])) {
                     insert_sanpham($tensp, $giasp, $hinh, $tacgia, $soluong,$mota, $iddm);
                     $thongbao = "Thêm thành công";
                 } else {
-                    $thongbaor = 'Vui lòng nhập tên và giá sản phẩm';
+                    $thongbaor = 'Vui lòng nhập tên và giá sản phẩm và giá phải lớn hơn 0';
 
                 }
 

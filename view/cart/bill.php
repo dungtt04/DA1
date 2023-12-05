@@ -36,11 +36,11 @@
                 <table class=" table table2" style="text-align:left">
                     <tr class="tr">
                         <td>Người đặt hàng</td>
-                        <td> <input class="w-100" type="text" name="userbuy" value="<?php echo $name; ?>" required> </td>
+                        <td> <input class="w-100" type="text" name="userbuy" value="<?php echo $name; ?>" > </td>
                     </tr>
                     <tr class="tr">
                         <td>Địa chỉ</td>
-                        <td> <input class="w-100" type="text" name="diachi" value="<?php echo $address; ?>" required> </td>
+                        <td> <input class="w-100" type="text" name="diachi" value="<?php echo $address; ?>" > </td>
                     </tr>
                     <tr class="tr">
                         <td>Email</td>
@@ -48,7 +48,7 @@
                     </tr>
                     <tr class="tr">
                         <td>Số điện thoại</td>
-                        <td> <input class="w-100" type="text" name="std" value="<?php echo $tel; ?> " required > </td>
+                        <td> <input class="w-100" type="text" name="std" value="<?php echo $tel; ?> "  > </td>
                     </tr>
                     <tr class="tr">
                         <td>Thông tin thanh toán</td>
