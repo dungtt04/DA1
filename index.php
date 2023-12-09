@@ -149,10 +149,6 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
                             array_push($_SESSION['my_cart'], $spadd);
                         }
             
-                        // echo "<pre>";
-                        // var_dump($_SESSION['my_cart']);
-                        // die;
-                        // include 'view/cart/viewcart.php';
 
                         }
             
@@ -168,17 +164,14 @@ if (isset($_GET['act']) && ($_GET['act'] != 0)) {
         case 'buynow':
             if (isset($_POST['buynow'])) {
                 if (isset($_SESSION['user'])) {
-                    // var_dump($_POST);die;
                     $idsp = $_POST['idsp'];
                     $namesp = $_POST['namesp'];
                     $img = $_POST['img'];
                     $price = $_POST['price'];
                     $soluong = $_POST['amount'];
-                    // var_dump($_POST['amount']); die;
                     $thanhtien = $price * $soluong;
                     $spadd = [$idsp, $namesp, $img, $price, $soluong, $thanhtien];
                     array_push($_SESSION['my_cart'], $spadd);
-// var_dump($_SESSION['my_cart']); die;
                 } else {
                     echo "Vui lòng đăng nhập trước nhập để thêm sản phẩm vào giỏ hàng - " . "<a href='?act=dangnhap'>Đăng nhập ngay!!!</a>";
                 }
