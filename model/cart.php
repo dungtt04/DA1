@@ -221,7 +221,7 @@ function trangthai($trangthai)
       $m_tt = "Đơn hàng đã được xác nhận";
       break;
     case '2':
-      $m_tt = "Đơn hà/ng đang được giao";
+      $m_tt = "Đơn hàng đang được giao";
       break;
     case '3':
       $m_tt = "Đơn hàng giao thành công";

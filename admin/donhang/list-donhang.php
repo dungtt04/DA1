@@ -65,7 +65,7 @@
                                 if ($tt == 'Đơn hàng giao thành công') {
                                     echo 'Đã được thanh toán';
 
-                                } else if ($tt == 'Hủy đơn hàng') {
+                                } else if ($tt == 'Đã hủy') {
                                     echo 'Đã hủy';
                                 } else {
                                     echo 'Đơn hàng chưa được thanh toán';
